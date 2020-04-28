@@ -10,6 +10,7 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import Typography from '@material-ui/core/Typography';
 import Footer from './components/Footer/Footer'
+import Tooltip from '@material-ui/core/Tooltip';
 
 // algorithm
 import rsa from './components/Algorithms/rsa';
@@ -81,7 +82,11 @@ function App() {
                 <Grid item><Button onClick={() => newKeys(512)} variant="contained">512 bit</Button></Grid>
                 <Grid item><Button onClick={() => newKeys(1024)} variant="contained">1024 bit</Button></Grid>
                 <Grid item><Button onClick={() => newKeys(2048)} variant="contained">2048 bit</Button></Grid>
-                <Grid item><Button onClick={() => newKeys(4096)} variant="contained">4096 bit</Button></Grid>
+                <Grid item>
+                  <Tooltip title="take a long time (about 100s), be patient!">
+                    <Button onClick={() => newKeys(4096)} variant="contained">4096 bit</Button>
+                  </Tooltip>
+                </Grid>
                 <Grid item>
                   <OutlinedInput
                     id="outlined-adornment-weight"
