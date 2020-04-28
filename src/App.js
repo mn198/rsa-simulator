@@ -9,6 +9,7 @@ import OutlinedInput from '@material-ui/core/OutlinedInput';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import Typography from '@material-ui/core/Typography';
+import Footer from './components/Footer/Footer'
 
 // algorithm
 import rsa from './components/Algorithms/rsa';
@@ -39,7 +40,9 @@ function App() {
     setE(keys.e);
     setD(keys.d);
     setTotient(keys.totient.toString(16));
-    
+    setPlainText('');
+    setPlainText2('');
+    setCiphertext('');
     t += performance.now();
     setTime((t/1000).toFixed(3))
   }
@@ -211,6 +214,7 @@ function App() {
           </Grid>          
         </Container>
       </div>
+      <Footer/>
     </div>
   );
 }
